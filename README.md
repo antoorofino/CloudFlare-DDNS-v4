@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-	<img src="./img/DDNS.png" alt="DDNS" width="100"/>
+	<img src="https://raw.githubusercontent.com/antoorofino/CloudFlare-DDNS-v4/main/img/DDNS.png" alt="DDNS" width="100"/>
 </p>
 
 Do you manage your DNS in CloudFlare but you don't have a static IP? The solution is `CF-DDNS-update.sh` !
@@ -34,7 +34,7 @@ These are the steps to follow to generate the **API token**:
 5. In *Zone Resources*:
 	- Include | Specific zone | ***your_dns _name_goes_here***
 
-<img src="./img/Token_settings.png" alt="drawing" width="80%"/>
+<img src="https://raw.githubusercontent.com/antoorofino/CloudFlare-DDNS-v4/main/img/Token_settings.png" alt="drawing" width="80%"/>
 
 ### Script Settings
 
