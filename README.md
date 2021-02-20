@@ -80,9 +80,9 @@ If you want the script to log the updates in a file, you can add a file as outpu
 
 where `/var/log/*log_file.log*` must be the full path of your file.
 
-### Install the script on Docker
+### Docker setup
 
-The CloudFlare-ddns Docker image supports amd64, arm32v6 and arm64v8 host architectures. The correct image for your system will automatically be downloaded.
+The CloudFlare-ddns Docker image supports amd64, arm64 and ppc64le host architectures. The correct image for your system will automatically be downloaded.
 
 You can simply run:
 ```
