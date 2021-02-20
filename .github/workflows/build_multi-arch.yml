@@ -16,8 +16,8 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=antoorofino/testrep
-          TAGS="antoorofino/testrep:latest"
+          DOCKER_IMAGE=antoorofino/cloudflare-ddns
+          TAGS="antoorofino/cloudflare-ddns:latest"
           # Set output parameters.
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=docker_image::${DOCKER_IMAGE}
@@ -43,6 +43,6 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64v8,linux/arm32v6
+          platforms: linux/amd64,linux/arm64,linux/ppc64le
           push: true
           tags: ${{ steps.prep.outputs.tags }}
