@@ -2,8 +2,8 @@
 
 <p align="center">
 	<img alt="Docker Image Size (tag)" src="https://img.shields.io/docker/image-size/antoorofino/cloudflare-ddns/amd64">
-	<img alt="Docker Cloud Automated build" src="https://img.shields.io/docker/cloud/automated/antoorofino/cloudflare-ddns">
-	<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/antoorofino/CloudFlare-DDNS-v4/build_multi-arch?label=multi-arch%20build">
+	<img alt="Docker Cloud Automated build" src="https://img.shields.io/docker/cloud/build/antoorofino/cloudflare-ddns">
+	<img alt="GitHub Workflow Status" src="https://github.com/antoorofino/CloudFlare-DDNS-v4/actions/workflows/build_multi-arch.yml/badge.svg">
 </p>
 
 <p align="center">
