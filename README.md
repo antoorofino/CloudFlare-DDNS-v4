@@ -82,7 +82,7 @@ where `/var/log/*log_file.log*` must be the full path of your file.
 
 ### Docker setup
 
-The CloudFlare-ddns Docker image supports amd64, arm64 and ppc64le host architectures. The correct image for your system will automatically be downloaded.
+The CloudFlare-ddns Docker image supports amd64, arm64, ppc64le and arm/v7 host architectures. The correct image for your system will automatically be downloaded.
 
 You can simply run:
 ```
