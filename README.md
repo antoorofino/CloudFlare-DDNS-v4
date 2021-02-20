@@ -1,9 +1,18 @@
 # CloudFlare DDNS api-v4
 
+<p align="center">
+	<img alt="Docker Image Size (tag)" src="https://img.shields.io/docker/image-size/antoorofino/cloudflare-ddns/amd64">
+	<img alt="Docker Cloud Automated build" src="https://img.shields.io/docker/cloud/automated/antoorofino/cloudflare-ddns">
+	<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/antoorofino/CloudFlare-DDNS-v4/build_multi-arch?label=multi-arch%20build">
+</p>
+
+<p align="center">
+	<img src="./img/DDNS.png" alt="DDNS" width="100"/>
+</p>
+
 Do you manage your DNS in CloudFlare but you don't have a static IP? The solution is `CF-DDNS-update.sh` !
-
-<img src="./img/DDNS.png" alt="drawing" width="100"/>
-
+It is available as a minimal Docker image too.
+\
 The script will allow you to automatically update an existing DNS record (type A or AAAA) in your CloudFlare account.
 It works using CloudFlare API-v4 (see documentation [here](https://api.cloudflare.com/)).
 
@@ -27,7 +36,7 @@ These are the steps to follow to generate the **API token**:
 
 <img src="./img/Token_settings.png" alt="drawing" width="80%"/>
 
-### Settings
+### Script Settings
 
 The configuration must be held in a separate file or passed via command options.
 
@@ -70,6 +79,36 @@ If you want the script to log the updates in a file, you can add a file as outpu
 ```
 
 where `/var/log/*log_file.log*` must be the full path of your file.
+
+### Install the script on Docker
+
+The CloudFlare-ddns Docker image supports amd64, arm32v6 and arm64v8 host architectures. The correct image for your system will automatically be downloaded.
+
+You can simply run:
+```
+docker run -d \
+  -e CFTOKEN=*token_api_goes_here* \
+  -e RECORD_NAME=test.test.com \
+  -e ZONE_NAME=test.com \
+  --restart always \
+  --name cloudflare-ddns \
+  antoorofino/cloudflare-ddns
+```
+
+If you want to specify all the options, you should run:
+```
+docker run -d \
+  -e CFTOKEN=*token_api_goes_here* \
+  -e RECORD_NAME=test.test.com \
+  -e ZONE_NAME=test.com \
+  -e RECORD_TYPE=A \
+  -e RECORD_TTL=120 \
+  -e RECORD_PROXIED="false" \
+  -e FORCE="false" \
+  --restart always \
+  --name cloudflare-ddns \
+  antoorofino/cloudflare-ddns
+```
 
 ## IMPORTANT
 
