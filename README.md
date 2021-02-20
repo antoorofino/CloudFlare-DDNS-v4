@@ -110,6 +110,20 @@ docker run -d \
   antoorofino/cloudflare-ddns
 ```
 
+### RUNNING DOCKER IN RASPBERRY
+
+You should add `--security-opt seccomp:unconfined` paramater to docker run command. See [issue](https://askubuntu.com/questions/1263284/apt-update-throws-signature-error-in-ubuntu-20-04-container-on-arm).
+```
+docker run -d \
+  --security-opt seccomp:unconfined \
+  -e CFTOKEN=*token_api_goes_here* \
+  -e RECORD_NAME=test.test.com \
+  -e ZONE_NAME=test.com \
+  --restart always \
+  --name cloudflare-ddns \
+  antoorofino/cloudflare-ddns
+```
+
 ## IMPORTANT
 
 In order to execute the script you must set the the right execution permissions to the file.\
